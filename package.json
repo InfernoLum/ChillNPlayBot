@@ -1,11 +1,13 @@
 {
-  "name": "Test",
-  "description": "Test",
-  "version": "0.0.0",
+  "name": "chillnplay-bot",
+  "version": "1.0.0",
+  "description": "A bot for ChillNPlay",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node bot.js",
   },
+  "author": "Beaulo",
+  "license": "ISC",
   "dependencies": {
     "discord.js": "11.1.0",
     "request": "2.81.0"
