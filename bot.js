@@ -44,7 +44,7 @@ client.on('message', message => {
 	}
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
-	let args = message.content.slice(prfx.length).trim().split(/ +/g).replace(prfx + command, " ");
+	let args = message.content.slice(prfx.length).split(' ');
 	
 	if(message.content.startsWith(prfx + command))
 	{
@@ -66,6 +66,7 @@ client.on('message', message => {
 					case 4: message.channel.send("No"); break;
 				}
 				message.channel.send(args);
+				message.channel.send(command);
 			}
 			break;
 			case "flip":
