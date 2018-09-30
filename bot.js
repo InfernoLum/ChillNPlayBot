@@ -2,12 +2,13 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.token
 let prfx = '?';
+let messageContent = message.content.toLowerCase();
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
 client.on('message', message => {
-    let messageContent = message.content.toLowerCase();
+    
     if (message.content === 'ping') {
     	message.reply('pong');
   	}
