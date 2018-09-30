@@ -44,7 +44,7 @@ client.on('message', message => {
 	}
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
-	let args = message.content.slice(prefix.length).trim().split(/ +/g);
+	let args = message.content.slice(prfx.length).trim().split(/ +/g);
 	
 	if(message.content.startsWith(prfx + command))
 	{
