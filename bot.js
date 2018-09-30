@@ -56,17 +56,17 @@ client.on('message', message => {
 								
 				let _coin = Math.floor((Math.random() * 2));
 				let FlippedCoins = parseInt(args);
-				if(FlippedCoins >= 100)
+				if(FlippedCoins >= 1)
 				{
 					if(userData[sender.id].money >= FlippedCoins)
 					{
 						switch(_coin)
 						{
-							case 0: message.channel.send("You win!"); 
+							case 0: message.channel.send("💰You win!💰"); 
 								userData[sender.id].money += Math.floor(FlippedCoins*2.5); 
 							break;
 			
-							case 1: message.channel.send("You lose!"); 
+							case 1: message.channel.send("💀You lose!💀"); 
 								userData[sender.id].money -= FlippedCoins; 
 							break;
 			
@@ -75,7 +75,7 @@ client.on('message', message => {
 					}
 				}else
 				{
-					message.reply("Minimum bet is 100");
+					message.reply("Minimum bet is 1");
 				}
 
 			break;
@@ -91,7 +91,7 @@ client.on('message', message => {
 					break;
 				
 			case "bal":
-				message.reply("💰Your Balance is:" + " " + userData[sender.id].money) + "💰";
+				message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰");
 		}
 	}
 });
