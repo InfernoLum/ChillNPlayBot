@@ -78,7 +78,7 @@ client.on('message', message => {
 				{
 					console.log("An error was thrown while trying to convert var: args to integer");
 				}
-				userData.[sender.id].money -= args;
+				userData[sender.id].money -= args;
 				switch(_coin)
 				{
 					case 0: message.channel.send("You win!"); break;
