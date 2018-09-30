@@ -2,9 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.token
 let prfx = '?';
-let messageContent = message.content.toLowerCase();
 client.on('ready', () => {
-    console.log('I am ready!');
+    console.log('Hello Starchild!');
 });
 
 client.on('message', message => {
@@ -15,8 +14,8 @@ client.on('message', message => {
     if (message.content === 'flip') {
 	    message.reply('flop');
     }
-    let command = messageContent.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
-	if(messageContent.startsWith(prfx + command))
+    let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
+	if(message.content.startsWith(prfx + command))
 	{
 
 		switch(command)
