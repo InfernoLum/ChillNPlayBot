@@ -94,7 +94,7 @@ client.on('message', message => {
 			case "bal":
 				message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
 			case "pay":
-				let _user = client.users.get("name", args).id;
+				let _user = message.mentions.users.first().id;
 				userData[_user].money += parseInt(args2);
 				message.channel.send(args2);
 				break;
