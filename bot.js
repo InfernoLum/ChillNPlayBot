@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.token
-
+let prfx = '?';
 client.on('ready', () => {
     console.log('I am ready!');
 });
