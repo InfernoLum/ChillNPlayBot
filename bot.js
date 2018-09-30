@@ -82,22 +82,27 @@ client.on('message', message => {
 			break;
 				message.channel.send(args);
 
-				case "cmds": 
-					message.channel.send(":regional_indicator_c: :regional_indicator_m: :regional_indicator_d: :regional_indicator_s:");
-					message.channel.send(":one: *** - PING***");
-					message.channel.send(":two: *** - 8BALL***");
-					message.channel.send(":three: *** - FLIP [AMOUNT]***");
-					message.channel.send(":four: *** - BAL***"); 
-					message.delete(10*1000);
-					break;
+			case "cmds": 
+				message.channel.send(":regional_indicator_c: :regional_indicator_m: :regional_indicator_d: :regional_indicator_s:");
+				message.channel.send(":one: *** - PING***");
+				message.channel.send(":two: *** - 8BALL***");
+				message.channel.send(":three: *** - FLIP [AMOUNT]***");
+				message.channel.send(":four: *** - BAL***"); 
+				message.delete(10*1000);
+			break;
 				
 			case "bal":
 				message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
 			case "pay":
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
-				if (!userData[pUser.id]) userData[pUser.id] = {}
-				if(!userData[pUser.id].money) userData[pUser.id].money = 600;
-				userData[pUser.id].money += parseInt(args2);
+				console.log(pUser.id);
+				if (!userData[pUser.id]) 
+				{
+					userData[pUser.id] = {
+						money: 600
+					};
+				}
+				userData[pUser.id].money += 600;
 				message.channel.send(args2);
 				break;
 		}
