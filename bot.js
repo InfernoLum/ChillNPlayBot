@@ -70,14 +70,7 @@ client.on('message', message => {
 			case "flip":
 			
 				let _coin = Math.floor((Math.random() * 2));
-				try
-				{
-					let moneyInvested = args.parseInt(args);
-				}
-				catch(err)
-				{
-					console.log("An error was thrown while trying to convert var: args to integer");
-				}
+				let moneyInvested = args.parseInt(args);
 				userData[sender.id].money -= args;
 				switch(_coin)
 				{
