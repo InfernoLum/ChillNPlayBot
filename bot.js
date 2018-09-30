@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const token = process.env.token
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -12,4 +13,4 @@ client.on('message', message => {
 });
 
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+client.login(token).catch(err => console.log(err));
