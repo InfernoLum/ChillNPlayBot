@@ -81,6 +81,7 @@ client.on('message', message => {
 					userData[sender.id].money -= FlippedCoins; 
 				break;
 			}
+			break;
 				message.channel.send(args);
 
 				case "cmds": 
