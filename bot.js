@@ -74,8 +74,12 @@ client.on('message', message => {
 					message.channel.send(":one: *** - PING***");
 					message.channel.send(":two: *** - 8BALL***");
 					message.channel.send(":three: *** - FLIP [amount]***");
-					message.channel.send(":four: *** - BAL***"); break;
-				message.delete(10*1000);
+					message.channel.send(":four: *** - BAL***"); 
+					message.delete(10*1000);
+					break;
+				
+			case "bal":
+				message.reply("Your Balance is:" + " " + userData[sender.id].money);
 		}
 	}
 });
