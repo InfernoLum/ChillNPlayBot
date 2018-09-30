@@ -7,6 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+    let messageContent = message.content.toLowerCase();
     if (message.content === 'ping') {
     	message.reply('pong');
   	}
