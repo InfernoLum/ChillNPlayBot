@@ -96,6 +96,7 @@ client.on('message', message => {
 			case "pay":
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				console.log(pUser.id);
+				message.channel.send(args2);
 				if (!userData[pUser.id]) 
 				{
 					userData[pUser.id] = {
