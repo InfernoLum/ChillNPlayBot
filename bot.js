@@ -34,6 +34,9 @@ client.on('message', message => {
 					case 3: message.channel.send("Not likely"); break;
 					case 4: message.channel.send("No"); break;
 				}
+			}else
+			{
+				Console.Log("Shit's stuck");
 			}
 			break;
 			case "flip":
