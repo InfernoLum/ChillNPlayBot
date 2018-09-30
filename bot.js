@@ -24,6 +24,7 @@ client.on('message', message => {
 			case "8ball":
 			if(message.content.Lenght > 6)
 			{
+				Console.Log("Something should happen now");
 				let _answer = Math.floor((Math.random() * 5));
 				switch(_answer)
 				{
