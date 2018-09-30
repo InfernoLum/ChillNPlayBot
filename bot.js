@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.token
 const fs = require('fs');
-const client = require('discord-rich-presence')('462694847439044608');
+const RchPresence = require('discord-rich-presence')('462694847439044608');
 
 let prfx = '?';
 
@@ -84,7 +84,7 @@ client.on('message', message => {
 // THIS  MUST  BE  THIS  WAY
 client.login(token).catch(err => console.log(err));
 
-client.updatePresence({
+RchPresence.updatePresence({
 	state: 'slithering',
 	details: '🐍',
 	startTimestamp: Date.now(),
