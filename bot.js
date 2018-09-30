@@ -44,6 +44,7 @@ client.on('message', message => {
 	}
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
+	let args = message.content.slice(prefix.length).trim().split(/ +/g);
 	
 	if(message.content.startsWith(prfx + command))
 	{
@@ -64,6 +65,7 @@ client.on('message', message => {
 					case 3: message.channel.send("Not likely"); break;
 					case 4: message.channel.send("No"); break;
 				}
+				message.channel.send(args);
 			}
 			break;
 			case "flip":
