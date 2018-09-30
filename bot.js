@@ -97,7 +97,7 @@ client.on('message', message => {
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				if (!userData[pUser.id]) userData[pUser.id] = {}
 				if(!userData[pUser.id].money) userData[pUser.id].money = 600;
-				userData[pUser].money += parseInt(args2);
+				userData[pUser.id].money += parseInt(args2);
 				message.channel.send(args2);
 				break;
 		}
