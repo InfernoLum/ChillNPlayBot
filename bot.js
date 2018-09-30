@@ -30,8 +30,7 @@ client.on('message', message => {
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
 	let args = message.content.slice(prfx.length).slice(command.length).toLowerCase();
-	let args1 = message.content.slice(prfx.length).slice(command.length);
-	let args2 = args2.slice(0);
+	let args2 = message.content.slice(prfx.length).slice(command.length).split(args.length);
 
 	if(message.content.startsWith(prfx + command))
 	{
@@ -97,7 +96,7 @@ client.on('message', message => {
 			case "pay":
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				console.log(pUser.id);
-				message.channel.send(args2);
+				message.channel.send(args2[1]);
 				if (!userData[pUser.id]) 
 				{
 					userData[pUser.id] = {
