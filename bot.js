@@ -37,6 +37,12 @@ client.on('message', message => {
 		message.reply(userData[sender.id].money);
 	}
 
+	if(message.content === 'getmymoney')
+	{
+		userData[sender.id].money -= 100;
+		message.reply("I took your money" + userData[sender.id].money);
+	}
+
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
 	
 	if(message.content.startsWith(prfx + command))
