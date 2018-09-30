@@ -104,7 +104,7 @@ client.on('message', message => {
 						money: 600
 					};
 				}
-				userData[pUser.id].money += args[2];
+				userData[pUser.id].money += parseInt(args[2]);
 				message.channel.send(args[2]);
 				break;
 		}
