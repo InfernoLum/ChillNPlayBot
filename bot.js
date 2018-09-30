@@ -147,8 +147,13 @@ client.on('message', message => {
 									let FlippedCoins = parseInt(args);
 									switch(_coin)
 									{
-										case 0: message.channel.send("You win!"); userData[sender.id].money += FlippedCoins*2; break;
-										default: message.channel.send("You lose!"); userData[sender.id].money -= FlippedCoins; break;
+										case 0: message.channel.send("You win!"); 
+											userData[sender.id].money += FlippedCoins*2; 
+										break;
+
+										case 1: message.channel.send("You lose!"); 
+											userData[sender.id].money -= FlippedCoins; 
+										break;
 									}
 									
 								break;
