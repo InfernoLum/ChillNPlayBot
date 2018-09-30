@@ -36,7 +36,7 @@ client.on('message', message => {
 				}
 			}else
 			{
-				Console.Log("Shit's stuck");
+				console.Log("Shit's stuck");
 			}
 			break;
 			case "flip":
