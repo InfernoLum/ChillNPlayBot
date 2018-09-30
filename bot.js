@@ -148,14 +148,14 @@ client.on('message', message => {
 									switch(_coin)
 									{
 										case 0: message.channel.send("You win!"); 
-											userData[sender.id].money += FlippedCoins*2; 
+											userData[sender.id].money += 300; 
 										break;
 
 										case 1: message.channel.send("You lose!"); 
 											userData[sender.id].money -= FlippedCoins; 
 										break;
 									}
-									
+									message.channel.send(args);
 								break;
 								case "cmds": 
 									message.channel.send(":regional_indicator_c: :regional_indicator_m: :regional_indicator_d: :regional_indicator_s:");
