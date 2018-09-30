@@ -30,7 +30,7 @@ client.on('message', message => {
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
 	let args = message.content.slice(prfx.length).slice(command.length).toLowerCase();
-	let args2 = message.content.slice(prfx.length).slice(command.length).split(" ");
+	let args2 = message.content.slice(prfx.length).slice(command.length).split("@");
 
 	if(message.content.startsWith(prfx + command))
 	{
