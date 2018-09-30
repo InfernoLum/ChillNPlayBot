@@ -44,7 +44,7 @@ client.on('message', message => {
 	}
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
-	let args = message.content.slice(prfx.length).slice(command.length);
+	let args = message.content.slice(prfx.length).slice(command.length).toLowerCase();
 	
 	if(message.content.startsWith(prfx + command))
 	{
@@ -52,7 +52,7 @@ client.on('message', message => {
 		switch(command)
 		{
 			case "ping": message.channel.send("Pong!"); break;
-			case ("8ball"):
+			case "8ball":
 			if(message.content.length >= 6)
 			{
 				console.log("Something should happen now");
@@ -65,17 +65,24 @@ client.on('message', message => {
 					case 3: message.channel.send("Not likely"); break;
 					case 4: message.channel.send("No"); break;
 				}
-				message.channel.send(args);
-				message.channel.send(command);
 			}
 			break;
 			case "flip":
 			
 				let _coin = Math.floor((Math.random() * 2));
+				try
+				{
+					let moneyInvested = args.parseInt(args);
+				}
+				catch(err)
+				{
+					console.log("An error was thrown while trying to convert var: args to integer");
+				}
+				userData.[sender.id].money -= args;
 				switch(_coin)
 				{
-					case 0: message.channel.send("It's Heads"); break;
-					default: message.channel.send("It's Tails"); break;
+					case 0: message.channel.send("You win!"); break;
+					default: message.channel.send("You lose!"); break;
 				}
 			break;
 			case "cmds": 
@@ -83,7 +90,6 @@ client.on('message', message => {
 				message.channel.send(":one: *** - PING***");
 				message.channel.send(":two: *** - 8BALL***");
 				message.channel.send(":three: *** - FLIP***"); break;
-
 		}
 	}
 });
