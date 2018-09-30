@@ -1,20 +1,44 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.token
+const fs = require('fs');
+
 let prfx = '?';
+
+
+let userData = JSON.parse(fs.readFileSync('userData.json' , 'utf8'));
+
+
 client.on('ready', () => {
     console.log('Hello Starchild!');
 });
 
 client.on('message', message => {
-    
+	
+	//Vars
+	let sender = message.author;
+	let msg = message.content.toUpperCase();
+
+
+	//Events
+	if (!userData[sender.id]) userData[sender.id] = {}
+	if(!userData[sender.id].money) userData[sender.id].money = 600;
+
     if (message.content === 'ping') {
     	message.reply('pong');
-  	}
+	}
+	  
     if (message.content === 'flip') {
 	    message.reply('flop');
-    }
-    let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
+	}
+	
+	if(message.content === 'money')
+	{
+		message.reply(userData[sender.id].money);
+	}
+
+	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
+	
 	if(message.content.startsWith(prfx + command))
 	{
 
