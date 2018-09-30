@@ -70,7 +70,7 @@ client.on('message', message => {
 			case "flip":
 			
 				let _coin = Math.floor((Math.random() * 2));
-				let moneyInvested = args.parse.parseInt(args);
+				//let moneyInvested = args.parse.parseInt(args);
 				userData[sender.id].money -= args;
 				
 				switch(_coin)
