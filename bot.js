@@ -97,7 +97,6 @@ client.on('message', message => {
 			case "pay":
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				console.log(pUser.id);
-				message.channel.send(args[1]);
 				if (!userData[pUser.id]) 
 				{
 					userData[pUser.id] = {
@@ -105,7 +104,7 @@ client.on('message', message => {
 					};
 				}
 				userData[pUser.id].money += parseInt(args[2]);
-				message.channel.send(args[2]);
+				message.channel.send(pUser + " You were sent " + args[2] + "💰" + " by " + message.author);
 				break;
 		}
 	}
