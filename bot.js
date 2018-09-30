@@ -82,12 +82,6 @@ client.on('message', message => {
 					
 					let userData = JSON.parse(fs.readFileSync('userData.json' , 'utf8'));
 					
-					
-					client.on('ready', () => {
-						console.log('Hello Starchild!');
-					});
-					
-					client.on('message', message => {
 						
 						//Vars
 						let sender = message.author;
@@ -164,7 +158,6 @@ client.on('message', message => {
 									message.channel.send(":three: *** - FLIP***"); break;
 							}
 						}
-					});
 					
 				}
 			break;
