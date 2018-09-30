@@ -30,11 +30,12 @@ client.on('message', message => {
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
 	let args = message.content.slice(prfx.length).slice(command.length).toLowerCase();
+	let args2 = message.content.slice(prfx.length).slice(command.length).slice(args.length).toLowerCase();
 
 	if(message.content.startsWith(prfx + command))
 	{
 					
-		switch(command)
+		switch(command.toLowerCase())
 		{
 			case "ping": message.channel.send("Pong!"); break;
 			case "8ball":
@@ -85,13 +86,16 @@ client.on('message', message => {
 					message.channel.send(":regional_indicator_c: :regional_indicator_m: :regional_indicator_d: :regional_indicator_s:");
 					message.channel.send(":one: *** - PING***");
 					message.channel.send(":two: *** - 8BALL***");
-					message.channel.send(":three: *** - FLIP [amount]***");
+					message.channel.send(":three: *** - FLIP [AMOUNT]***");
 					message.channel.send(":four: *** - BAL***"); 
 					message.delete(10*1000);
 					break;
 				
 			case "bal":
-				message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰");
+				message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
+			case "pay":
+				userData[args].money += parseInt(args2);
+				break;
 		}
 	}
 });
