@@ -21,7 +21,7 @@ client.on('message', message => {
 		switch(command)
 		{
 			case "ping": message.channel.send("Pong!"); break;
-			case ("8ball" && command.Lenght > 6):
+			case ("8ball" && command.lenght > 6):
 				console.log("Something should happen now");
 				let _answer = Math.floor((Math.random() * 5));
 				switch(_answer)
