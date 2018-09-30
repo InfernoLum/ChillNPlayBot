@@ -74,7 +74,7 @@ client.on('message', message => {
 			switch(_coin)
 			{
 				case 0: message.channel.send("You win!"); 
-					userData[sender.id].money *= Math.floor(FlippedCoins*2.5); 
+					userData[sender.id].money += Math.floor(FlippedCoins*2.5); 
 				break;
 
 				case 1: message.channel.send("You lose!"); 
