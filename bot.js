@@ -22,7 +22,7 @@ client.on('message', message => {
 		{
 			case "ping": message.channel.send("Pong!"); break;
 			case "8ball":
-			if(message.conten.Lenght > 6)
+			if(message.content.Lenght > 6)
 			{
 				let _answer = Math.floor((Math.random() * 5));
 				switch(_answer)
