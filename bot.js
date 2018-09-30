@@ -71,7 +71,7 @@ client.on('message', message => {
 			
 				let _coin = Math.floor((Math.random() * 2));
 				//let moneyInvested = args.parse.parseInt(args);
-				userData[sender.id].money -= args;
+				userData[sender.id].money -= 100;
 				
 				switch(_coin)
 				{
