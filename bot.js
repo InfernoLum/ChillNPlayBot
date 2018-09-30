@@ -10,6 +10,9 @@ client.on('message', message => {
     if (message.content === 'ping') {
     	message.reply('pong');
   	}
+    if (message.content === 'flip') {
+	    message.reply('flop');
+    }
     let command = messageContent.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
 	if(messageContent.startsWith(prfx + command))
 	{
@@ -42,9 +45,6 @@ client.on('message', message => {
 				message.channel.send(":one: *** - PING***");
 				message.channel.send(":two: *** - 8BALL***");
 				message.channel.send(":three: *** - FLIP***"); break;
-			case "elamains":
-				message.channel.send("Ela mains hella gay");
-
 
 		}
 	}
