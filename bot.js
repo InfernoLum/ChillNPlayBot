@@ -70,8 +70,9 @@ client.on('message', message => {
 			case "flip":
 			
 				let _coin = Math.floor((Math.random() * 2));
-				let moneyInvested = args.parseInt(args);
+				let moneyInvested = args.parse.parseInt(args);
 				userData[sender.id].money -= args;
+				
 				switch(_coin)
 				{
 					case 0: message.channel.send("You win!"); break;
