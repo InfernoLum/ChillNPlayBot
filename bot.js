@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.token
 const fs = require('fs');
+const client = require('discord-rich-presence')('462694847439044608');
 
 let prfx = '?';
 
@@ -26,21 +27,6 @@ client.on('message', message => {
 
     if (message.content === 'ping') {
     	message.reply('pong');
-	}
-	  
-    if (message.content === 'flip') {
-	    message.reply('flop');
-	}
-	
-	if(message.content === 'money')
-	{
-		message.reply(userData[sender.id].money);
-	}
-
-	if(message.content === 'getmymoney')
-	{
-		userData[sender.id].money -= 100;
-		message.reply("I took your money" + userData[sender.id].money);
 	}
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
@@ -88,10 +74,22 @@ client.on('message', message => {
 					message.channel.send(":regional_indicator_c: :regional_indicator_m: :regional_indicator_d: :regional_indicator_s:");
 					message.channel.send(":one: *** - PING***");
 					message.channel.send(":two: *** - 8BALL***");
-					message.channel.send(":three: *** - FLIP***"); break;
+					message.channel.send(":three: *** - FLIP [amount]***");
+					message.channel.send(":four: *** - BAL***"); break;
+				message.delete(10*1000);
 		}
 	}
 });
 
 // THIS  MUST  BE  THIS  WAY
 client.login(token).catch(err => console.log(err));
+
+client.updatePresence({
+	state: 'slithering',
+	details: '🐍',
+	startTimestamp: Date.now(),
+	endTimestamp: Date.now() + 1337,
+	largeImageKey: 'snek_large',
+	smallImageKey: 'snek_small',
+	instance: true,
+  });
