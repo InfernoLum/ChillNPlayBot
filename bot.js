@@ -79,7 +79,7 @@ client.on('message', message => {
 					break;
 				
 			case "bal":
-				message.reply("Your Balance is:" + " " + userData[sender.id].money);
+				message.reply("💰Your Balance is:" + " " + userData[sender.id].money) + "💰";
 		}
 	}
 });
