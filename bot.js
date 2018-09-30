@@ -70,13 +70,11 @@ client.on('message', message => {
 			case "flip":
 			
 				let _coin = Math.floor((Math.random() * 2));
-				//let moneyInvested = args.parse.parseInt(args);
 				userData[sender.id].money -= 100;
-				
 				switch(_coin)
 				{
 					case 0: message.channel.send("You win!"); break;
-					default: message.channel.send("You lose!"); break;
+					default: message.channel.send("You lose!"); userData[sender.id].money -= 100; break;
 				}
 			break;
 			case "cmds": 
