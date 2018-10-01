@@ -103,9 +103,39 @@ client.on('message', message => {
 						money: 600
 					};
 				}
-				userData[pUser.id].money += parseInt(args[2]);
-				message.channel.send(pUser + " You were sent " + args[2] + "💰" + " by " + message.author);
+				if(userData[sender.id].money >= parseInt(args[2]))
+				{
+					userData[pUser.id].money += parseInt(args[2]);
+					userData[pUser.id].money -= parseInt(args[2]);
+					message.channel.send(pUser + " You were sent " + args[2] + "💰" + " by " + message.author);
+				}
+
 				break;
+			case "mute":
+				let _user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
+				if(args[1] != " ")
+				{
+					if(_user.mute == true)
+					{
+						message.reply("This user is already muted");
+						message.delete(6000);
+					}else
+					{
+						_user.setMute = true;
+					}
+				}
+			break;
+			case "unmute":
+				let _user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
+				if(_user.mute != true)
+				{
+					message.reply("This user is not muted");
+					message.delete(6000);
+				}else
+				{
+					_user.setMute = false;
+				}
+			break;
 		}
 	}
 });
