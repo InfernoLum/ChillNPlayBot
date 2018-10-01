@@ -124,7 +124,7 @@ client.on('message', message => {
 						_user.setMute = true;
 					}
 				}
-			break;
+			break;*/
 			case "unmute":
 				let _user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				if(_user.mute != true)
@@ -135,7 +135,7 @@ client.on('message', message => {
 				{
 					_user.setMute = false;
 				}
-			break;*/
+			break;
 		}
 	}
 });
