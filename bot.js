@@ -107,7 +107,7 @@ client.on('message', message => {
 				if(userData[sender.id].money >= parseInt(args[2]))
 				{
 					userData[pUser.id].money += parseInt(args[2]);
-					userData[pUser.id].money -= parseInt(args[2]);
+					userData[sender.id].money -= parseInt(args[2]);
 					message.channel.send(pUser + " You were sent " + args[2] + "💰" + " by " + message.author);
 				}
 
