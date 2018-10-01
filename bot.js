@@ -94,6 +94,7 @@ client.on('message', message => {
 				
 			case "bal":
 				message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
+				
 			case "pay":
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				console.log(pUser.id);
@@ -110,8 +111,9 @@ client.on('message', message => {
 					message.channel.send(pUser + " You were sent " + args[2] + "💰" + " by " + message.author);
 				}
 
-				break;
-			/*case "mute":
+			break;
+
+			case "mute":
 				let _user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				if(args[1] != " ")
 				{
@@ -124,7 +126,8 @@ client.on('message', message => {
 						_user.setMute = true;
 					}
 				}
-			break;*/
+			break;
+
 			case "unmute":
 				let _user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				if(_user.mute != true)
