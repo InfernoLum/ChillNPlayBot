@@ -94,7 +94,7 @@ client.on('message', message => {
 				
 			case "bal":
 				message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
-				
+
 			case "pay":
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				console.log(pUser.id);
@@ -114,29 +114,29 @@ client.on('message', message => {
 			break;
 
 			case "mute":
-				let _user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
+				let _MuteUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				if(args[1] != " ")
 				{
-					if(_user.mute == true)
+					if(_MuteUser.mute == true)
 					{
 						message.reply("This user is already muted");
 						message.delete(6000);
 					}else
 					{
-						_user.setMute = true;
+						_MuteUser.setMute = true;
 					}
 				}
 			break;
 
 			case "unmute":
-				let _user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
-				if(_user.mute != true)
+				let _UnmuteUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
+				if(_UnmuteUser.mute != true)
 				{
 					message.reply("This user is not muted");
 					message.delete(6000);
 				}else
 				{
-					_user.setMute = false;
+					_UnmuteUser.setMute = false;
 				}
 			break;
 		}
