@@ -93,7 +93,18 @@ client.on('message', message => {
 			break;
 				
 			case "bal":
-				message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
+				if(args[1] == " ")
+				{
+					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
+				}
+				else
+				{
+					let bUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
+					balEmb = new Discord.RichEmbed()
+					.setTitle(message.author)
+					.addField(bUser + "Has" + (userData[bUser.id].money + "💰"));
+				}
+				
 
 			case "pay":
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
@@ -108,7 +119,11 @@ client.on('message', message => {
 				{
 					userData[pUser.id].money += parseInt(args[2]);
 					userData[sender.id].money -= parseInt(args[2]);
-					message.channel.send(pUser + " You were sent " + args[2] + "💰" + " by " + message.author);
+					pEmbed = new Discord.RichEmbed()
+					.setTitle(message.author)
+					.addField("You sent " + args[2] + "💰")
+					.addField("To" + pUser);
+					message.delete(10000);
 				}
 
 			break;
