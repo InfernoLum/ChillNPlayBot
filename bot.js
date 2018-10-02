@@ -119,10 +119,9 @@ client.on('message', message => {
 				{
 					userData[pUser.id].money += parseInt(args[2]);
 					userData[sender.id].money -= parseInt(args[2]);
-					pEmbed = new Discord.RichEmbed()
-					.setTitle(message.author)
-					.addField("You sent " + args[2] + "💰")
-					.addField("To" + pUser);
+					pEmbed = new Discord.RichEmbed(title=message.author, description=("You sent " + args[2] + "💰"), color=0xa50fd0)
+					embed.add_field(name="To" + pUser);
+					
 					message.delete(10000);
 				}
 
