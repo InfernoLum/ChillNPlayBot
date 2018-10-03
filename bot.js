@@ -100,7 +100,7 @@ client.on('message', message => {
 					message.channel.send({embed:{
 					title: message.author,
 					description: "Your Balance is: ",
-					color: 0xEB984E,
+					color: 0xEB984E
 					}});
 				}
 				else
