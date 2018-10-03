@@ -97,9 +97,9 @@ client.on('message', message => {
 				if(args[1] === undefined)
 				{
 					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰");
-				 	const balEmb = new Discord.RichEmbed();
-					balEmb.setTitle = message.author;
-					balEmb.addDescription = ("You have: " + (userData[sender.id].money + "💰"));
+				 	const balEmb = new Discord.RichEmbed()
+					.setTitle(message.author)
+					.addDescription("You have: " + (userData[sender.id].money + "💰"));
 					message.channel.send({ embed: balEmb })
 					
 				}
