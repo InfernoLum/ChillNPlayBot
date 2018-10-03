@@ -103,7 +103,7 @@ client.on('message', message => {
 					color: 0xEB984E,
 					"fields": [
 						{
-							"name": userData[sender.id].money + "💰",
+							"name": (userData[sender.id].money + "💰".toString()),
 							"value": " "
 						}
 					]
