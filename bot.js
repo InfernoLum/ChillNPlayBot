@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.token
 const fs = require('fs');
+const ms = require('ms');
 
 let prfx = '?';
 
@@ -83,7 +84,7 @@ client.on('message', message => {
 			break;
 				message.channel.send(args);
 
-			case "cmds": 
+			case "help": 
 				message.channel.send(":regional_indicator_c: :regional_indicator_m: :regional_indicator_d: :regional_indicator_s:");
 				message.channel.send(":one: *** - PING***");
 				message.channel.send(":two: *** - 8BALL***");
@@ -120,7 +121,10 @@ client.on('message', message => {
 					message.channel.send(pUser + " You were sent " + args[2] + "💰" + " by " + message.author);
 					message.delete(10000);
 				}
-				
+			break;
+			case "daily":
+				await ms('1 min');
+				message.channel.send("1 minute has passed!");
 			break;
 
 			case "mute":
