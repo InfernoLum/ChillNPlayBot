@@ -97,7 +97,7 @@ client.on('message', message => {
 				if(args[1] === undefined)
 				{
 					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
-					balEmb = new discord
+				 	const balEmb = new Discord.RichEmbed()
 					.setTitle(message.author)
 					.addField("You have: " + (userData[sender.id].money + "💰"));
 					message.channel.send(balEmb);
