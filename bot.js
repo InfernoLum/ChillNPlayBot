@@ -98,7 +98,7 @@ client.on('message', message => {
 				{
 					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰");
 					message.channel.send({embed:{
-					title: message.author.id,
+					title: message.author,
 					description: "Your Balance is: ",
 					color: 0xEB984E,
 					}});
