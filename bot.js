@@ -100,9 +100,10 @@ client.on('message', message => {
 				else
 				{
 					let bUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
-					balEmb = new Discord.RichEmbed()
+					balEmb = new discord
 					.setTitle(message.author)
 					.addField(bUser + "Has" + (userData[bUser.id].money + "💰"));
+					message.channel.send(balEmb);
 				}
 				
 
@@ -122,34 +123,13 @@ client.on('message', message => {
 					message.channel.send(pUser + " You were sent " + args[2] + "💰" + " by " + message.author);
 					message.delete(10000);
 				}
-
+				
 			break;
 
 			case "mute":
-				let _MuteUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
-				if(args[1] != " ")
-				{
-					if(_MuteUser.mute == true)
-					{
-						message.reply("This user is already muted");
-						message.delete(6000);
-					}else
-					{
-						_MuteUser.setMute = true;
-					}
-				}
 			break;
 
 			case "unmute":
-				let _UnmuteUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
-				if(_UnmuteUser.mute != true)
-				{
-					message.reply("This user is not muted");
-					message.delete(6000);
-				}else
-				{
-					_UnmuteUser.setMute = false;
-				}
 			break;
 		}
 	}
