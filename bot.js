@@ -6,7 +6,7 @@ const ms = require('ms');
 
 let prfx = '?';
 
-
+var gotCoins = new Set();
 let userData = JSON.parse(fs.readFileSync('userData.json' , 'utf8'));
 
 
@@ -122,9 +122,16 @@ client.on('message', message => {
 					message.delete(10000);
 				}
 			break;
-			case "daily":
-				await ms('1 min');
-				message.channel.send("1 minute has passed!");
+			case "freecoins":
+				if(!gotCoins.has(message.author.id))
+				{
+					message.reply("You have been given some free coins.");
+					userData[sender.id].money += 150;
+					gotCoins.add(message.author.id);
+				}else
+				{
+					message.reply("You can get free coins every 30 minutes!");
+				}
 			break;
 
 			case "mute":
@@ -134,6 +141,9 @@ client.on('message', message => {
 			break;
 		}
 	}
+	setTimeout(() => {
+		gotCoins.delete(message.author.id);
+	}, 1800000);
 });
 
 // THIS  MUST  BE  THIS  WAY
