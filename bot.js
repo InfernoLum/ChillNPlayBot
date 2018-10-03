@@ -107,11 +107,11 @@ client.on('message', message => {
 
 					
 				}
-				
-
+			break;
+			
 			case "pay":
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
-				console.log(pUser.id);
+				//console.log(pUser.id);
 				if (!userData[pUser.id]) 
 				{
 					userData[pUser.id] = {
