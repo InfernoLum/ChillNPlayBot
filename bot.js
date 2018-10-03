@@ -100,7 +100,7 @@ client.on('message', message => {
 				 	const balEmb = new Discord.RichEmbed();
 					balEmb.setTitle = message.author;
 					balEmb.addDescription = ("You have: " + (userData[sender.id].money + "💰"));
-					message.channel.send(balEmb);
+					message.channel.send({ embed: balEmb })
 					
 				}
 				else
