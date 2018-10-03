@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.token
 const fs = require('fs');
-const ms = require('ms');
+const ms = require('parse-ms');
 
 let prfx = '?';
 
