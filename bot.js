@@ -98,7 +98,7 @@ client.on('message', message => {
 				{
 					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰");
 					message.channel.send({embed:{
-					title: message.author,
+					title: message.author.toString(),
 					description: "Your Balance is: ",
 					color: 0xEB984E,
 					"fields": [
@@ -113,8 +113,6 @@ client.on('message', message => {
 				else
 				{
 					let bUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
-
-					
 				}
 			break;
 
