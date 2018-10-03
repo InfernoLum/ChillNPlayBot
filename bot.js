@@ -99,7 +99,8 @@ client.on('message', message => {
 					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
 				 	const balEmb = new Discord.RichEmbed()
 					.setTitle(message.author)
-					.addField("You have: " + (userData[sender.id].money + "💰"));
+					.setColor(0xFF0000)
+					.addDescription("You have: " + (userData[sender.id].money + "💰"));
 					message.channel.send(balEmb);
 					
 				}
