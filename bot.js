@@ -96,14 +96,16 @@ client.on('message', message => {
 				if(args[1] == " ")
 				{
 					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
+					balEmb = new discord
+					.setTitle(message.author)
+					.addField("You have: " + (userData[sender.id].money + "💰"));
+					message.channel.send(balEmb);
 				}
 				else
 				{
 					let bUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
-					balEmb = new discord
-					.setTitle(message.author)
-					.addField(bUser + "Has" + (userData[bUser.id].money + "💰"));
-					message.channel.send(balEmb);
+
+					
 				}
 				
 
