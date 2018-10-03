@@ -86,21 +86,23 @@ client.on('message', message => {
 			case "help": 
 				message.channel.send(":regional_indicator_c: :regional_indicator_m: :regional_indicator_d: :regional_indicator_s:");
 				message.channel.send(":one: *** - PING***");
-				message.channel.send(":two: *** - 8BALL***");
-				message.channel.send(":three: *** - FLIP [AMOUNT]***");
-				message.channel.send(":four: *** - BAL***"); 
-				message.delete(10*1000);
+				message.channel.send(":two: *** - 8BALL [QUESTION]***");
+				message.channel.send(":three: *** - FLIP [AMOUNT OF COINS]***");
+				message.channel.send(":four: *** - BAL [USER]***");
+				message.channel.send(":five: *** - FREECOINS") 
+				message.delete(10000);
 			break;
 				
 			case "bal":
 				console.log(args[1]);
 				if(args[1] === undefined)
 				{
-					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰");
+					message.reply("Your Balance is: " + userData[sender.id].money + "💰");
 				}
 				else
 				{
 					let bUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
+					message.reply("This user has: " + userData[bUser.id].money + "💰");
 				}
 			break;
 
