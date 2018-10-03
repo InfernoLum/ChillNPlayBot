@@ -102,7 +102,6 @@ client.on('message', message => {
 					description: "Your Balance is: ",
 					color: 0xEB984E,
 					}});
-					
 				}
 				else
 				{
