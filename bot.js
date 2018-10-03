@@ -94,7 +94,7 @@ client.on('message', message => {
 				
 			case "bal":
 				console.log(args[1]);
-				if(args[1] == " ")
+				if(args[1] === undefined)
 				{
 					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
 					balEmb = new discord
