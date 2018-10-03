@@ -101,12 +101,6 @@ client.on('message', message => {
 					title: message.author.toString(),
 					description: "Your Balance is: ",
 					color: 0xEB984E,
-					"fields": [
-						{
-							"name": (userData[sender.id].money + "💰".toString()),
-							"value": " "
-						}
-					]
 					}});
 					
 				}
