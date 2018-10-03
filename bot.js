@@ -93,6 +93,7 @@ client.on('message', message => {
 			break;
 				
 			case "bal":
+				console.log(args[1]);
 				if(args[1] == " ")
 				{
 					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
@@ -100,6 +101,7 @@ client.on('message', message => {
 					.setTitle(message.author)
 					.addField("You have: " + (userData[sender.id].money + "💰"));
 					message.channel.send(balEmb);
+					
 				}
 				else
 				{
@@ -108,7 +110,7 @@ client.on('message', message => {
 					
 				}
 			break;
-			
+
 			case "pay":
 				let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args);
 				//console.log(pUser.id);
