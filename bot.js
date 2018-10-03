@@ -96,7 +96,7 @@ client.on('message', message => {
 				console.log(args[1]);
 				if(args[1] === undefined)
 				{
-					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰"); break;
+					message.reply("Your Balance is:" + " " + userData[sender.id].money + "💰");
 				 	const balEmb = new Discord.RichEmbed()
 					.setTitle(message.author)
 					.setColor(0xFF0000)
