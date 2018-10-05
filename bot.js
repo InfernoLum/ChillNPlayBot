@@ -11,7 +11,7 @@ let userData = JSON.parse(fs.readFileSync('userData.json' , 'utf8'));
 
 client.on('ready', () => {
 	console.log('Hello Starchild!');
-	client.user.setGame("?help");
+	
 });
 
 client.on('message', message => {
@@ -66,13 +66,13 @@ client.on('message', message => {
 						switch(_coin)
 						{
 							case 0: 
-								message.reply("💰You win!💰" + " Your new balance is: " + userData[sender.id].money); 
 								userData[sender.id].money += Math.floor(FlippedCoins*2.5); 
+								message.reply("💰You win!💰" + " Your new balance is: " + userData[sender.id].money); 
 							break;
 			
 							case 1: 
-								message.reply("💀You lose!💀" + " Your new balance is: " + userData[sender.id].money); 
 								userData[sender.id].money -= FlippedCoins; 
+								message.reply("💀You lose!💀" + " Your new balance is: " + userData[sender.id].money); 
 							break;
 			
 			
