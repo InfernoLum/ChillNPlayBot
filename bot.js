@@ -10,7 +10,8 @@ let userData = JSON.parse(fs.readFileSync('userData.json' , 'utf8'));
 
 
 client.on('ready', () => {
-    console.log('Hello Starchild!');
+	console.log('Hello Starchild!');
+	client.user.setGame("?help");
 });
 
 client.on('message', message => {
