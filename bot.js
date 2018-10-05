@@ -64,11 +64,13 @@ client.on('message', message => {
 					{
 						switch(_coin)
 						{
-							case 0: message.channel.send("💰You win!💰"); 
+							case 0: 
+								message.reply("💰You win!💰" + " Your new balance is: " + userData[sender.id].money); 
 								userData[sender.id].money += Math.floor(FlippedCoins*2.5); 
 							break;
 			
-							case 1: message.channel.send("💀You lose!💀"); 
+							case 1: 
+								message.reply("💀You lose!💀" + " Your new balance is: " + userData[sender.id].money); 
 								userData[sender.id].money -= FlippedCoins; 
 							break;
 			
@@ -120,6 +122,7 @@ client.on('message', message => {
 					userData[pUser.id].money += parseInt(args[2]);
 					userData[sender.id].money -= parseInt(args[2]);
 					message.channel.send(pUser + " You were sent " + args[2] + "💰" + " by " + message.author);
+					message.channel.send(pUser + "Your new balance is: " + userData[pUser.id].money)
 					message.delete(10000);
 				}
 			break;
