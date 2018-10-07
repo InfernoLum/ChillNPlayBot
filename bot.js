@@ -35,7 +35,7 @@ client.on('message', message => {
 			autohr: {
 				name: "This is should be the name"
 			},
-			description: 'This is an embed',
+			description: message.author,
 				fields: [{
 					name: "Field1",
 					value: "This is the value of field1",
