@@ -35,9 +35,9 @@ client.on('message', message => {
 			autohr: {
 				name: "This is should be the name"
 			},
-			description: '',
+			description: 'dsgsdg',
 				fields: [{
-					name: "",
+					name: "gsddgs",
 					value: "This is the value of field1",
 					inlne: true	
 				}]
