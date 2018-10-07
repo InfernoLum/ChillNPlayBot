@@ -37,11 +37,16 @@ client.on('message', message => {
 			},
 			description: '',
 				fields: [{
-					name: message.author,
+					name: "",
 					value: "This is the value of field1",
 					inlne: true	
 				}]
 		}});
+		var embed1 = new Discord.RichEmbed()
+    	.setTitle("My Title")
+    	.setAuthor("My Name", message.author.avatarURL)
+    	.setDescription("My Description");
+    	message.channel.send(embed1);
 	}
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
