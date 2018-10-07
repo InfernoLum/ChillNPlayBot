@@ -28,6 +28,13 @@ client.on('message', message => {
     if (message.content === 'ping') {
     	message.reply('pong');
 	}
+	if(message.content === "embed")
+	{
+		const embed = new Discord.MessageEmbed()
+		.setColor(0xffffff)
+		.setFooter('This is a test embed')
+		.setDescription('This is the description of the embed')
+	}
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
 	//let args = message.content.slice(prfx.length).slice(command.length);
@@ -134,7 +141,7 @@ client.on('message', message => {
 				}else
 				{
 					message.reply("You have been given some free coins.");
-					userData[sender.id].money += 150;
+					userData[sender.id].money += 1200;
 					gotCoins.add(message.author.id);
 				}
 			break;
