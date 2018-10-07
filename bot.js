@@ -30,11 +30,18 @@ client.on('message', message => {
 	}
 	if(message.content === "embed")
 	{
-		const embed = new Discord.MessageEmbed()
-		.setColor(0xffffff)
-		.setFooter('This is a test embed')
-		.setDescription('This is the description of the embed')
-		message.channel.send(embed)
+		message.channel.send({embed: {
+			color: 0x00ff00,
+			autohr: {
+				name: "This is should be the name"
+			},
+			description: 'This is an embed',
+				fields: [{
+					name: "Field1",
+					value: "This is the value of field1",
+					inlne: true	
+				}]
+		}});
 	}
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
