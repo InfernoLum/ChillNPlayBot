@@ -34,6 +34,7 @@ client.on('message', message => {
 		.setColor(0xffffff)
 		.setFooter('This is a test embed')
 		.setDescription('This is the description of the embed')
+		message.channel.send(embed)
 	}
 
 	let command = message.content.slice(prfx.length).trim().split(/ +/g).shift().toLowerCase();
