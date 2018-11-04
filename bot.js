@@ -94,7 +94,7 @@ client.on('message', message => {
 									message.send("Congratulations "+ message.author +" You won the Jackpot! Your winnings have been multiplied by 10");
 								}else
 								{
-									userData[sender.id].money += Math.floor(FlippedCoins*Jackpot);
+									userData[sender.id].money += Math.floor(FlippedCoins*2);
 									message.reply("💰You win!💰" + " Your new balance is: " + userData[sender.id].money);
 								}
 								 
