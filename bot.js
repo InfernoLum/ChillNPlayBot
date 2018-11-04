@@ -88,7 +88,7 @@ client.on('message', message => {
 							case 0: 
 								
 								var Jackpot = Math.floor((Math.random() * 10));
-								if(Jackpot == 10)
+								if(Jackpot == 9)
 								{
 									userData[sender.id].money += Math.floor(FlippedCoins*Jackpot);
 									message.send("Congratulations "+ message.author +" You won the Jackpot! Your winnings have been multiplied by 10");
@@ -160,7 +160,7 @@ client.on('message', message => {
 			case "freecoins":
 				if(gotCoins.has(message.author.id))
 				{
-					message.reply("You can get free coins every 30 minutes!");
+					message.reply("You must wait before you can get free coins again!");
 				}else
 				{
 					message.reply("You have been given some free coins.");
@@ -178,7 +178,7 @@ client.on('message', message => {
 	}
 	setTimeout(() => {
 		gotCoins.delete(message.author.id);
-	}, 1800000);
+	}, 180000);
 });
 
 // THIS  MUST  BE  THIS  WAY
