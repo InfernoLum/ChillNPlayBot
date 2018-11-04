@@ -178,7 +178,7 @@ client.on('message', message => {
 	}
 	setTimeout(() => {
 		gotCoins.delete(message.author.id);
-	}, 180000);
+	}, 18000);
 });
 
 // THIS  MUST  BE  THIS  WAY
