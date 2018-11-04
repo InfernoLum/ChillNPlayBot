@@ -33,7 +33,7 @@ client.on('message', message => {
 		message.channel.send({embed: {
 			color: 0x00ff00,
 			autohr: {
-				name: "This is should be the name"
+				name: message.author
 			},
 			description: 'dsgsdg',
 				fields: [{
@@ -86,8 +86,18 @@ client.on('message', message => {
 						switch(_coin)
 						{
 							case 0: 
-								userData[sender.id].money += Math.floor(FlippedCoins*2.5); 
-								message.reply("💰You win!💰" + " Your new balance is: " + userData[sender.id].money); 
+								
+								var Jackpot = Math.floor((Math.random() * 10));
+								if(Jackpot == 10)
+								{
+									userData[sender.id].money += Math.floor(FlippedCoins*Jackpot);
+									message.send("Congratulations "message.author " You won the Jackpot! Your winnings have been multiplied by 10");
+								}else
+								{
+									userData[sender.id].money += Math.floor(FlippedCoins*Jackpot);
+									message.reply("💰You win!💰" + " Your new balance is: " + userData[sender.id].money);
+								}
+								 
 							break;
 			
 							case 1: 
@@ -135,7 +145,7 @@ client.on('message', message => {
 				if (!userData[pUser.id]) 
 				{
 					userData[pUser.id] = {
-						money: 600
+						money: 1450
 					};
 				}
 				if(userData[sender.id].money >= parseInt(args[2]))
@@ -154,7 +164,7 @@ client.on('message', message => {
 				}else
 				{
 					message.reply("You have been given some free coins.");
-					userData[sender.id].money += 1200;
+					userData[sender.id].money += 5000;
 					gotCoins.add(message.author.id);
 				}
 			break;
